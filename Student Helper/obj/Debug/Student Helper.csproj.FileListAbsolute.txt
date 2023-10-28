@@ -14,7 +14,6 @@ C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\bin\Debug\MySql.Data
 C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.csproj.AssemblyReference.cache
 C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.csproj.SuggestedBindingRedirects.cache
 C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.exe.config
-C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.Form1.resources
 C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.Properties.Resources.resources
 C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.csproj.GenerateResource.cache
 C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.csproj.CoreCompileInputs.cache
@@ -23,3 +22,7 @@ C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student He
 C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.pdb
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\bin\Debug\MySql.Web.dll
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\bin\Debug\MySql.Web.xml
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.CalendarForm.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.ScheduleForm.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlEmpty.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlDay.resources

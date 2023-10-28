@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySqlX.XDevAPI.Relational;
+using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,21 +15,73 @@ namespace Student_Helper
 {
     public partial class CalendarForm : Form
     {
+        static DateTime currentDT = DateTime.Now;
+        static int currentYear = currentDT.Year;
+        static int currentMonth = currentDT.Month;
+
         public CalendarForm()
         {
             InitializeComponent();
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
         private void CalendarForm_Load(object sender, EventArgs e)
         {
+            displayDays();
+        }
+        
+        //calendar
+        private void displayDays()
+        {
+            string monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(currentMonth);
+            labelMonth.Text = monthname + " " + currentYear;
 
+            DateTime startofthemonth = new DateTime(currentYear, currentMonth, 1);
+
+            int days = DateTime.DaysInMonth(currentYear, currentMonth);
+
+            int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d"));
+
+            for (int i = 1; i < dayoftheweek; i++)
+            {
+                UserControlEmpty UCBlank = new UserControlEmpty();
+                dayContainer.Controls.Add(UCBlank);  
+            }
+
+            for (int i = 1; i <= days; i++)
+            {
+                UserControlDay UCDays = new UserControlDay();
+                UCDays.days(i);
+                dayContainer.Controls.Add(UCDays);
+            }
         }
 
+        //Next Button
+        private void NextBtn_Click(object sender, EventArgs e)
+        {
+            dayContainer.Controls.Clear();
+            if (currentMonth == 12)
+            {
+                currentMonth = 0;
+                currentYear++;
+            }
+            currentMonth++;
+            displayDays();
+        }
+
+        //Prev Button
+        private void PrevBtn_Click(object sender, EventArgs e)
+        {
+            dayContainer.Controls.Clear();
+            if (currentMonth == 1)
+            {
+                currentMonth = 13;
+                currentYear--;
+            }
+            currentMonth--;
+            displayDays();
+        }
+
+        //Menu Buttons
         private void buttonSchedule_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -61,6 +115,11 @@ namespace Student_Helper
             this.Hide();
             CalendarForm CalendarForm = new CalendarForm();
             CalendarForm.Show();
+        }
+
+        private void dayContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
