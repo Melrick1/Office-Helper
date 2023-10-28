@@ -64,7 +64,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(141, 450);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // buttonCalendar
             // 
@@ -125,7 +124,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(620, 305);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // buttonAdd
             // 
@@ -182,7 +180,6 @@
             this.Day.Size = new System.Drawing.Size(101, 21);
             this.Day.TabIndex = 10;
             this.Day.Text = "Day";
-            this.Day.SelectedIndexChanged += new System.EventHandler(this.Day_SelectedIndexChanged);
             // 
             // ScheduleInput
             // 
@@ -199,7 +196,6 @@
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Data :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buttonUpdate
             // 

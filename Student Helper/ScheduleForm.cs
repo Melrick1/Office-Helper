@@ -19,58 +19,13 @@ namespace Student_Helper
         private MySqlCommand perintah;
 
         private DataSet ds = new DataSet();
-        private string alamat, query;
+        private string dir, alamat, query;
         public ScheduleForm()
         {
-            alamat = "server=localhost; database=visprog; username=root; password=;";
+            alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
 
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void buttonSchedule_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ScheduleForm ScheduleForm = new ScheduleForm();
-            ScheduleForm.Show();
-        }
-
-        private void buttonReminder_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            NotesForm NotesForm = new NotesForm();
-            NotesForm.Show();
-        }
-
-        private void buttonToDo_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ToDoForm ToDoForm = new ToDoForm();
-            ToDoForm.Show();
-        }
-
-        private void buttonNotes_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            NotesForm NotesForm = new NotesForm();
-            NotesForm.Show();
-        }
-
-        private void buttonCalendar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CalendarForm CalendarForm = new CalendarForm();
-            CalendarForm.Show();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -175,16 +130,6 @@ namespace Student_Helper
             }
         }
 
-        private void Day_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             try
@@ -219,6 +164,42 @@ namespace Student_Helper
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        //Main Menu Buttons
+        private void buttonSchedule_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ScheduleForm ScheduleForm = new ScheduleForm();
+            ScheduleForm.Show();
+        }
+
+        private void buttonReminder_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NotesForm NotesForm = new NotesForm();
+            NotesForm.Show();
+        }
+
+        private void buttonToDo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ToDoForm ToDoForm = new ToDoForm();
+            ToDoForm.Show();
+        }
+
+        private void buttonNotes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NotesForm NotesForm = new NotesForm();
+            NotesForm.Show();
+        }
+
+        private void buttonCalendar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CalendarForm CalendarForm = new CalendarForm();
+            CalendarForm.Show();
         }
     }
 }
