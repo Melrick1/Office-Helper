@@ -25,7 +25,7 @@ namespace Student_Helper
         }
 
         //Load
-        private void CalendarForm_Load(object sender, EventArgs e)
+        public void CalendarForm_Load(object sender, EventArgs e)
         {
             displayDays();
         }
@@ -81,7 +81,6 @@ namespace Student_Helper
             }
             currentMonth--;
             displayDays();
-           
         }
 
         //Menu Buttons

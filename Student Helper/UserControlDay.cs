@@ -34,11 +34,13 @@ namespace Student_Helper
 
         }
 
+        //Label Day
         public void days(int numday)
         {
             labelDay.Text = numday + "";
         }
 
+        //Control Click
         private void UserControlDay_Click(object sender, EventArgs e)
         {
             currentDay = labelDay.Text;
@@ -46,7 +48,7 @@ namespace Student_Helper
             EventFrm.Show();
         }
 
-        //Display Event
+        //Display Event from page load
         public void displayEvent(int numday)
         {
             if (koneksi.State != ConnectionState.Open)

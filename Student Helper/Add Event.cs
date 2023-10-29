@@ -33,6 +33,29 @@ namespace Student_Helper
             DateTxt.Text = UserControlDay.currentDay + "-" + CalendarForm.currentMonth + "-" + CalendarForm.currentYear;
         }
 
+        //Delete Event
+        private void DeleteEvent_Click(object sender, EventArgs e)
+        {
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("delete from event_date where Date = '{0}'", DateTxt.Text);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                perintah.ExecuteNonQuery();
+                koneksi.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            this.Close();
+        }
+
         //Add Event
         private void AddEvent_Click(object sender, EventArgs e)
         {
@@ -61,6 +84,8 @@ namespace Student_Helper
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            this.Close();
         }
     }
 }
