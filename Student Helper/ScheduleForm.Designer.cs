@@ -217,7 +217,7 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // Schedule
+            // ScheduleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -232,8 +232,9 @@
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Name = "Schedule";
-            this.Text = "Student-Helper";
+            this.Name = "ScheduleForm";
+            this.Text = "Student-Helper | Schedule";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

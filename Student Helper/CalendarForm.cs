@@ -16,14 +16,15 @@ namespace Student_Helper
     public partial class CalendarForm : Form
     {
         static DateTime currentDT = DateTime.Now;
-        static int currentYear = currentDT.Year;
-        static int currentMonth = currentDT.Month;
+        public static int currentYear = currentDT.Year;
+        public static int currentMonth = currentDT.Month;
 
         public CalendarForm()
         {
             InitializeComponent();
         }
 
+        //Load
         private void CalendarForm_Load(object sender, EventArgs e)
         {
             displayDays();
@@ -115,11 +116,6 @@ namespace Student_Helper
             this.Hide();
             CalendarForm CalendarForm = new CalendarForm();
             CalendarForm.Show();
-        }
-
-        private void dayContainer_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
