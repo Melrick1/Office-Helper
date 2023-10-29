@@ -52,6 +52,7 @@ namespace Student_Helper
             {
                 UserControlDay UCDays = new UserControlDay();
                 UCDays.days(i);
+                UCDays.displayEvent(i);
                 dayContainer.Controls.Add(UCDays);
             }
         }
@@ -80,6 +81,7 @@ namespace Student_Helper
             }
             currentMonth--;
             displayDays();
+           
         }
 
         //Menu Buttons
