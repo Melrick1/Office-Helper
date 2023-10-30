@@ -182,8 +182,8 @@ namespace Student_Helper
         private void buttonReminder_Click(object sender, EventArgs e)
         {
             this.Hide();
-            NotesForm NotesForm = new NotesForm();
-            NotesForm.Show();
+            ReminderForm ReminderForm = new ReminderForm();
+            ReminderForm.Show();
         }
 
         private void buttonToDo_Click(object sender, EventArgs e)

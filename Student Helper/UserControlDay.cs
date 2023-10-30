@@ -29,10 +29,6 @@ namespace Student_Helper
 
             InitializeComponent();
         }
-        private void UserControlDay_Load(object sender, EventArgs e)
-        {
-
-        }
 
         //Label Day
         public void days(int numday)
@@ -57,7 +53,7 @@ namespace Student_Helper
             }
             try
             {
-                query = string.Format("Select event from event_date where date = '{0}'", numday + "-" + CalendarForm.currentMonth + "-" + CalendarForm.currentYear);
+                query = string.Format("Select event from event_date where Date = '{0}'", numday + "-" + CalendarForm.currentMonth + "-" + CalendarForm.currentYear);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 MySqlDataReader reader = perintah.ExecuteReader();

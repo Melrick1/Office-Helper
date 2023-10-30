@@ -66,7 +66,6 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "UserControlDay";
             this.Size = new System.Drawing.Size(138, 96);
-            this.Load += new System.EventHandler(this.UserControlDay_Load);
             this.Click += new System.EventHandler(this.UserControlDay_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
