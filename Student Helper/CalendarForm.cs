@@ -40,7 +40,7 @@ namespace Student_Helper
 
             int days = DateTime.DaysInMonth(currentYear, currentMonth);
 
-            int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d"));
+            int dayoftheweek = Convert.ToInt32(startofthemonth.DayOfWeek.ToString("d")) + 1;
 
             for (int i = 1; i < dayoftheweek; i++)
             {
@@ -117,6 +117,11 @@ namespace Student_Helper
             this.Hide();
             CalendarForm CalendarForm = new CalendarForm();
             CalendarForm.Show();
+        }
+
+        private void dayContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
