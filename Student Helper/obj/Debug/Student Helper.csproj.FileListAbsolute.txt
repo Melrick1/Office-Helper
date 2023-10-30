@@ -26,3 +26,5 @@ C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_He
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.ScheduleForm.resources
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlEmpty.resources
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlDay.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.NotesForm.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.Add_Event.resources

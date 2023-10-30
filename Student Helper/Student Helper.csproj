@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add Event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Event.Designer.cs">
+      <DependentUpon>Add Event.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,8 +105,14 @@
     <Compile Include="UserControlDay.Designer.cs">
       <DependentUpon>UserControlDay.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Add Event.resx">
+      <DependentUpon>Add Event.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotesForm.resx">
+      <DependentUpon>NotesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleForm.resx">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
@@ -133,9 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="HelperDB.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
