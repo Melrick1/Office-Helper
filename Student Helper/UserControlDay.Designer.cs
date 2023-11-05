@@ -56,6 +56,10 @@
             this.EventLbl.TabIndex = 2;
             this.EventLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // UserControlDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -66,6 +70,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "UserControlDay";
             this.Size = new System.Drawing.Size(138, 96);
+            this.Load += new System.EventHandler(this.UserControlDay_Load);
             this.Click += new System.EventHandler(this.UserControlDay_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

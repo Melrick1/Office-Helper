@@ -200,11 +200,6 @@ namespace Student_Helper
             NotesForm.Show();
         }
 
-        private void Day_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCalendar_Click(object sender, EventArgs e)
         {
             this.Hide();

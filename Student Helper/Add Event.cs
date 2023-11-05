@@ -84,7 +84,7 @@ namespace Student_Helper
             {
                 MessageBox.Show(ex.ToString());
             }
-
+            
             this.Close();
         }
     }

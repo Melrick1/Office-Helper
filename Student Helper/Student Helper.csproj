@@ -127,6 +127,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ToDoForm.resx">
+      <DependentUpon>ToDoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlEmpty.resx">
       <DependentUpon>UserControlEmpty.cs</DependentUpon>
     </EmbeddedResource>

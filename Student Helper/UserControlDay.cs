@@ -18,7 +18,6 @@ namespace Student_Helper
         private MySqlDataAdapter adapter;
         private MySqlCommand perintah;
 
-        private DataSet ds = new DataSet();
         private string alamat, query;
 
         public static string currentDay;
@@ -30,22 +29,33 @@ namespace Student_Helper
             InitializeComponent();
         }
 
-        //Label Day
-        public void days(int numday)
+        private void UserControlDay_Load(object sender, EventArgs e)
         {
-            labelDay.Text = numday + "";
+            //Timer to check for updates
+            timer1.Start();
+        }
+
+        //Label Day
+        public void days(int numDay)
+        {
+            labelDay.Text = numDay + "";
         }
 
         //Control Click
         private void UserControlDay_Click(object sender, EventArgs e)
         {
             currentDay = labelDay.Text;
-            Add_Event EventFrm = new Add_Event();
-            EventFrm.Show();
+            Add_Event addEventFrm = new Add_Event();
+            addEventFrm.Show();
         }
 
-        //Display Event from page load
-        public void displayEvent(int numday)
+        private void timer1_Tick(object sender, EventArgs e)    
+        {
+            //Convert string to int
+            calendarDisplayEvent(Convert.ToInt32(labelDay.Text));
+        }
+
+        public void calendarDisplayEvent(int numDay)
         {
             if (koneksi.State != ConnectionState.Open)
             {
@@ -53,14 +63,20 @@ namespace Student_Helper
             }
             try
             {
-                query = string.Format("Select event from event_date where Date = '{0}'", numday + "-" + CalendarForm.currentMonth + "-" + CalendarForm.currentYear);
+                query = string.Format("Select event from event_date where Date = '{0}'", numDay + "-" + CalendarForm.currentMonth + "-" + CalendarForm.currentYear);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 MySqlDataReader reader = perintah.ExecuteReader();
 
-                while (reader.Read())
+                //if Readable(bool=true) then display EventText from database
+                if (reader.Read())
                 {
                     EventLbl.Text = reader["Event"].ToString();
+                }
+                //else then display empty
+                else
+                {
+                    EventLbl.Text = "";
                 }
                 reader.Dispose();
                 perintah.Dispose();

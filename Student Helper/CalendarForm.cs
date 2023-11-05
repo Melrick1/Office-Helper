@@ -15,7 +15,7 @@ namespace Student_Helper
 {
     public partial class CalendarForm : Form
     {
-        static DateTime currentDT = DateTime.Now;
+        public static DateTime currentDT = DateTime.Now;
         public static int currentYear = currentDT.Year;
         public static int currentMonth = currentDT.Month;
 
@@ -44,16 +44,16 @@ namespace Student_Helper
 
             for (int i = 1; i < dayoftheweek; i++)
             {
-                UserControlEmpty UCBlank = new UserControlEmpty();
-                dayContainer.Controls.Add(UCBlank);  
+                UserControlEmpty UserControlBlank = new UserControlEmpty();
+                dayContainer.Controls.Add(UserControlBlank);  
             }
 
             for (int i = 1; i <= days; i++)
             {
-                UserControlDay UCDays = new UserControlDay();
-                UCDays.days(i);
-                UCDays.displayEvent(i);
-                dayContainer.Controls.Add(UCDays);
+                UserControlDay UserControlDate = new UserControlDay();
+                UserControlDate.days(i);
+                UserControlDate.calendarDisplayEvent(i);
+                dayContainer.Controls.Add(UserControlDate);
             }
         }
 
@@ -117,11 +117,6 @@ namespace Student_Helper
             this.Hide();
             CalendarForm CalendarForm = new CalendarForm();
             CalendarForm.Show();
-        }
-
-        private void dayContainer_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
