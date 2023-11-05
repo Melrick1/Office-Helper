@@ -60,6 +60,7 @@
             this.buttonCalendar.TabIndex = 3;
             this.buttonCalendar.Text = "Calendar";
             this.buttonCalendar.UseVisualStyleBackColor = true;
+            this.buttonCalendar.Click += new System.EventHandler(this.buttonCalendar_Click);
             // 
             // buttonNotes
             // 
@@ -70,6 +71,7 @@
             this.buttonNotes.TabIndex = 2;
             this.buttonNotes.Text = "Notes";
             this.buttonNotes.UseVisualStyleBackColor = true;
+            this.buttonNotes.Click += new System.EventHandler(this.buttonNotes_Click);
             // 
             // buttonToDo
             // 
@@ -80,6 +82,7 @@
             this.buttonToDo.TabIndex = 2;
             this.buttonToDo.Text = "To-Do List";
             this.buttonToDo.UseVisualStyleBackColor = true;
+            this.buttonToDo.Click += new System.EventHandler(this.buttonToDo_Click);
             // 
             // buttonReminder
             // 
@@ -90,6 +93,7 @@
             this.buttonReminder.TabIndex = 1;
             this.buttonReminder.Text = "Reminder";
             this.buttonReminder.UseVisualStyleBackColor = true;
+            this.buttonReminder.Click += new System.EventHandler(this.buttonReminder_Click);
             // 
             // buttonSchedule
             // 
@@ -100,6 +104,7 @@
             this.buttonSchedule.TabIndex = 0;
             this.buttonSchedule.Text = "Schedule";
             this.buttonSchedule.UseVisualStyleBackColor = true;
+            this.buttonSchedule.Click += new System.EventHandler(this.buttonSchedule_Click);
             // 
             // ToDoForm
             // 

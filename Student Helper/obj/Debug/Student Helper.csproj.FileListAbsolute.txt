@@ -58,3 +58,4 @@ C:\Users\legion\source\repos\Project Visprog\Student Helper\obj\Debug\Student He
 C:\Users\legion\source\repos\Project Visprog\Student Helper\obj\Debug\Student Helper.csproj.CopyComplete
 C:\Users\legion\source\repos\Project Visprog\Student Helper\obj\Debug\Student Helper.exe
 C:\Users\legion\source\repos\Project Visprog\Student Helper\obj\Debug\Student Helper.pdb
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.ToDoForm.resources
