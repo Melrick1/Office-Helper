@@ -61,11 +61,23 @@
     <Compile Include="Add Event.Designer.cs">
       <DependentUpon>Add Event.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add Notes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Notes.Designer.cs">
+      <DependentUpon>Add Notes.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalendarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CalendarForm.Designer.cs">
       <DependentUpon>CalendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewNotes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewNotes.Designer.cs">
+      <DependentUpon>NewNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="NotesForm.cs">
       <SubType>Form</SubType>
@@ -108,8 +120,14 @@
     <EmbeddedResource Include="Add Event.resx">
       <DependentUpon>Add Event.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Add Notes.resx">
+      <DependentUpon>Add Notes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewNotes.resx">
+      <DependentUpon>NewNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NotesForm.resx">
       <DependentUpon>NotesForm.cs</DependentUpon>
