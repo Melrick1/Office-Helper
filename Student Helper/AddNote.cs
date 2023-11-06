@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,22 +11,17 @@ using System.Windows.Forms;
 
 namespace Student_Helper
 {
-    public partial class Add_Notes : Form
+    public partial class AddNote : Form
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
         private MySqlCommand perintah;
 
         private string alamat, query;
-        public static DateTime ToDate = DateTime.Now;
-        public Add_Notes(string noteTitle)
-        {
-            // Inisialisasi form dan lakukan logika yang sesuai
-            // Gunakan noteTitle sesuai kebutuhan Anda
-        }
 
+        public static DateTime toDate = DateTime.Now;
 
-        public Add_Notes()
+        public AddNote()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -35,6 +29,11 @@ namespace Student_Helper
         }
 
         private void Add_Notes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNote_Load(object sender, EventArgs e)
         {
 
         }
@@ -47,7 +46,7 @@ namespace Student_Helper
             }
             try
             {
-                query = string.Format("insert into notes (judul, tanggal) values ('{0}', '{1}')",NewNotesTxt.Text, ToDate);
+                query = string.Format("insert into notes (judul, tanggal) values ('{0}', '{1}')", AddNoteTxt.Text, toDate);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 int res = perintah.ExecuteNonQuery();
@@ -66,6 +65,7 @@ namespace Student_Helper
             {
                 MessageBox.Show(ex.ToString());
             }
+            NotesForm.resetBool = true;
             this.Close();
         }
     }

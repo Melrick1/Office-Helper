@@ -21,6 +21,8 @@ namespace Student_Helper
 
         private string id;
         private string alamat, query;
+        public static bool resetBool = false, addBool = false, editBool = false;
+
         public NotesForm()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
@@ -30,6 +32,43 @@ namespace Student_Helper
 
         private void NotesForm_Load(object sender, EventArgs e)
         {
+            currentNotes();
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //Check for resets
+            if (resetBool == true)
+            {
+                NotesContainer.Controls.Clear();
+                currentNotes();
+                resetBool = false;
+            }
+            
+            //Check for adds
+            if (addBool == true)
+            {
+                AddNote addNote = new AddNote();
+                addNote.Show();
+                addBool = false;
+            }
+
+            //Check for edits
+            if (editBool == true)
+            {
+                EditNote editNote = new EditNote();
+                editNote.Show();
+                editBool = false;
+            }
+        }
+
+
+        public void currentNotes()
+        {
+            UserControlAddNote UCAddNote = new UserControlAddNote();
+            NotesContainer.Controls.Add(UCAddNote);
+
             if (koneksi.State != ConnectionState.Open)
             {
                 koneksi.Open();
@@ -37,7 +76,7 @@ namespace Student_Helper
             try
             {
                 // Kode sebelumnya untuk mengambil judul catatan terbaru dari database
-                query = "SELECT id FROM notes ORDER BY id DESC LIMIT 1";
+                query = "SELECT COUNT(ID) FROM notes;";
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
 
@@ -46,12 +85,10 @@ namespace Student_Helper
                     // Jika ada data yang dapat dibaca
                     if (reader.Read())
                     {
-                        id = reader["id"].ToString();
+                        id = reader["Count(ID)"].ToString();
                     }
-                    else
-                    {
-                        id = "New Notes";
-                    }
+                    reader.Dispose();
+                    perintah.Dispose();
                 }
             }
             catch (Exception ex)
@@ -59,10 +96,19 @@ namespace Student_Helper
                 MessageBox.Show(ex.ToString());
             }
 
-            for (int i = 1; i <= Convert.ToInt32(id); i++)
+            for (int i = 0; i <= Convert.ToInt32(id) - 1; i++)
             {
-
+                UserControlNewNote newNotes = new UserControlNewNote();
+                newNotes.displayJudulFromIndex(i);
+                NotesContainer.Controls.Add(newNotes);
             }
+        }
+
+        //Manual Refresh
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            NotesContainer.Controls.Clear();
+            currentNotes();
         }
 
         //Main Menu Buttons
@@ -99,14 +145,6 @@ namespace Student_Helper
             this.Hide();
             CalendarForm CalendarForm = new CalendarForm();
             CalendarForm.Show();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Add_Notes add_Notes = new Add_Notes();
-            add_Notes.Show();
-            NewNotes newNotes = new NewNotes();
-            NotesContainer.Controls.Add(newNotes);
         }
     }  
 }

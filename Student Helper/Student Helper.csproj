@@ -61,11 +61,17 @@
     <Compile Include="Add Event.Designer.cs">
       <DependentUpon>Add Event.cs</DependentUpon>
     </Compile>
-    <Compile Include="Add Notes.cs">
+    <Compile Include="AddNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add Notes.Designer.cs">
-      <DependentUpon>Add Notes.cs</DependentUpon>
+    <Compile Include="AddNote.Designer.cs">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlAddNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlAddNote.Designer.cs">
+      <DependentUpon>UserControlAddNote.cs</DependentUpon>
     </Compile>
     <Compile Include="CalendarForm.cs">
       <SubType>Form</SubType>
@@ -73,11 +79,17 @@
     <Compile Include="CalendarForm.Designer.cs">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewNotes.cs">
+    <Compile Include="EditNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditNote.Designer.cs">
+      <DependentUpon>EditNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlNewNote.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NewNotes.Designer.cs">
-      <DependentUpon>NewNotes.cs</DependentUpon>
+    <Compile Include="UserControlNewNote.Designer.cs">
+      <DependentUpon>UserControlNewNote.cs</DependentUpon>
     </Compile>
     <Compile Include="NotesForm.cs">
       <SubType>Form</SubType>
@@ -120,14 +132,17 @@
     <EmbeddedResource Include="Add Event.resx">
       <DependentUpon>Add Event.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Add Notes.resx">
-      <DependentUpon>Add Notes.cs</DependentUpon>
+    <EmbeddedResource Include="AddNote.resx">
+      <DependentUpon>AddNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewNotes.resx">
-      <DependentUpon>NewNotes.cs</DependentUpon>
+    <EmbeddedResource Include="EditNote.resx">
+      <DependentUpon>EditNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlNewNote.resx">
+      <DependentUpon>UserControlNewNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NotesForm.resx">
       <DependentUpon>NotesForm.cs</DependentUpon>
@@ -153,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlDay.resx">
       <DependentUpon>UserControlDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlAddNote.resx">
+      <DependentUpon>UserControlAddNote.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -35,6 +35,12 @@ namespace Student_Helper
             timer1.Start();
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //Convert string to int
+            calendarDisplayEvent(Convert.ToInt32(labelDay.Text));
+        }
+
         //Label Day
         public void days(int numDay)
         {
@@ -49,10 +55,11 @@ namespace Student_Helper
             addEventFrm.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)    
+        private void EventLbl_Click(object sender, EventArgs e)
         {
-            //Convert string to int
-            calendarDisplayEvent(Convert.ToInt32(labelDay.Text));
+            currentDay = labelDay.Text;
+            Add_Event addEventFrm = new Add_Event();
+            addEventFrm.Show();
         }
 
         public void calendarDisplayEvent(int numDay)

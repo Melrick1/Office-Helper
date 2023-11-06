@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class Add_Notes
+    partial class EditNote
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.NewNotesTxt = new System.Windows.Forms.TextBox();
+            this.EditNotesTxt = new System.Windows.Forms.TextBox();
             this.AddEvent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -37,52 +37,49 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(148, 46);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(111, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 25);
-            this.label2.TabIndex = 10;
+            this.label2.Size = new System.Drawing.Size(53, 20);
+            this.label2.TabIndex = 11;
             this.label2.Text = "Title :";
             // 
-            // NewNotesTxt
+            // EditNotesTxt
             // 
-            this.NewNotesTxt.Location = new System.Drawing.Point(45, 83);
-            this.NewNotesTxt.Margin = new System.Windows.Forms.Padding(4);
-            this.NewNotesTxt.Name = "NewNotesTxt";
-            this.NewNotesTxt.Size = new System.Drawing.Size(277, 22);
-            this.NewNotesTxt.TabIndex = 8;
-            this.NewNotesTxt.Text = "New Note";
+            this.EditNotesTxt.Location = new System.Drawing.Point(34, 67);
+            this.EditNotesTxt.Name = "EditNotesTxt";
+            this.EditNotesTxt.Size = new System.Drawing.Size(209, 20);
+            this.EditNotesTxt.TabIndex = 12;
             // 
             // AddEvent
             // 
-            this.AddEvent.Location = new System.Drawing.Point(235, 134);
-            this.AddEvent.Margin = new System.Windows.Forms.Padding(4);
+            this.AddEvent.Location = new System.Drawing.Point(176, 109);
             this.AddEvent.Name = "AddEvent";
-            this.AddEvent.Size = new System.Drawing.Size(87, 31);
-            this.AddEvent.TabIndex = 6;
-            this.AddEvent.Text = "Add";
+            this.AddEvent.Size = new System.Drawing.Size(65, 25);
+            this.AddEvent.TabIndex = 13;
+            this.AddEvent.Text = "Edit";
             this.AddEvent.UseVisualStyleBackColor = true;
             this.AddEvent.Click += new System.EventHandler(this.AddEvent_Click);
             // 
-            // Add_Notes
+            // EditNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 178);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.NewNotesTxt);
+            this.ClientSize = new System.Drawing.Size(272, 145);
             this.Controls.Add(this.AddEvent);
-            this.Name = "Add_Notes";
-            this.Text = "Add_Notes";
-            this.Load += new System.EventHandler(this.Add_Notes_Load);
+            this.Controls.Add(this.EditNotesTxt);
+            this.Controls.Add(this.label2);
+            this.Name = "EditNote";
+            this.Text = "Edit Note";
+            this.Load += new System.EventHandler(this.EditNote_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox NewNotesTxt;
+        private System.Windows.Forms.TextBox EditNotesTxt;
         private System.Windows.Forms.Button AddEvent;
     }
 }

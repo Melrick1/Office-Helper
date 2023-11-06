@@ -7,26 +7,23 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Student_Helper
 {
-    public partial class NewNotes : UserControl
+    public partial class UserControlNewNote : UserControl
     {
-        private string title;
-
- 
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
         private MySqlCommand perintah;
 
         private string alamat, query;
 
-        public static DateTime ToDate = DateTime.Now;
-
-        public NewNotes()
+        public static string Title;
+        public UserControlNewNote()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -36,47 +33,48 @@ namespace Student_Helper
 
         private void NewNotes_Load(object sender, EventArgs e)
         {
-            timer1.Start();
-        }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            displayJudul();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            this.BackColor = Color.DimGray;
+            NotesForm.editBool = true;
         }
 
-        private void displayJudul()
+        private void NoteLbl_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.DimGray;
+            NotesForm.editBool = true;
+        }
+
+        public void displayJudulFromIndex(int index)
         {
             if (koneksi.State != ConnectionState.Open)
             {
                 koneksi.Open();
             }
-
             try
             {
                 // Kode sebelumnya untuk mengambil judul catatan terbaru dari database
-                query = "SELECT judul FROM notes ORDER BY id DESC LIMIT 2";
+                query = string.Format("SELECT judul FROM notes limit 1 offset {0}", index);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
 
-                using (MySqlDataReader reader = perintah.ExecuteReader())
+                MySqlDataReader reader = perintah.ExecuteReader();
                 {
                     // Jika ada data yang dapat dibaca
                     if (reader.Read())
                     {
-                        title = reader["judul"].ToString();
+                        Title = reader["judul"].ToString();
                     }
                     else
                     {
-                        title = "New Notes";
+                        Title = "New Notes";
                     }
                 }
 
-                NoteLbl.Text = title;
+                NoteLbl.Text = Title;
             }
             catch (Exception ex)
             {
@@ -88,9 +86,6 @@ namespace Student_Helper
                 koneksi.Close();
             }
         }
-
-
-
     }
 }
 

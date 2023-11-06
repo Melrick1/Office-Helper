@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class NewNotes
+    partial class UserControlNewNote
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,48 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewNotes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlNewNote));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NoteLbl = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(17, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 145);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(128, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // NoteLbl
             // 
+            this.NoteLbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NoteLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.NoteLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteLbl.Location = new System.Drawing.Point(0, 151);
+            this.NoteLbl.Location = new System.Drawing.Point(0, 122);
+            this.NoteLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NoteLbl.Name = "NoteLbl";
-            this.NoteLbl.Size = new System.Drawing.Size(200, 34);
+            this.NoteLbl.Size = new System.Drawing.Size(150, 28);
             this.NoteLbl.TabIndex = 1;
-            this.NoteLbl.Text = "Temporary";
+            this.NoteLbl.Text = "New Note";
             this.NoteLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NoteLbl.Click += new System.EventHandler(this.NoteLbl_Click);
             // 
-            // timer1
+            // UserControlNewNote
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // NewNotes
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.NoteLbl);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "NewNotes";
-            this.Size = new System.Drawing.Size(200, 185);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "UserControlNewNote";
             this.Load += new System.EventHandler(this.NewNotes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -80,6 +80,5 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label NoteLbl;
-        private System.Windows.Forms.Timer timer1;
     }
 }
