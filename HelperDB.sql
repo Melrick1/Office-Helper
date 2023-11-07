@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2023 at 08:47 AM
+-- Generation Time: Nov 07, 2023 at 05:41 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -32,14 +32,49 @@ CREATE TABLE `event_date` (
   `Event` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `event_date`
+-- Table structure for table `list`
 --
 
-INSERT INTO `event_date` (`Date`, `Event`) VALUES
-('4-11-2023', 'Wayn Day'),
-('3-11-2023', 'MyDay'),
-('2-11-2023', 'Filkom Day');
+CREATE TABLE `list` (
+  `Title` varchar(24) NOT NULL,
+  `Description` varchar(50) NOT NULL,
+  `DueDate` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `list`
+--
+
+INSERT INTO `list` (`Title`, `Description`, `DueDate`) VALUES
+('Testing', 'gotta test stuff and add things', '15-11-2023');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notes`
+--
+
+CREATE TABLE `notes` (
+  `ID` int(2) NOT NULL,
+  `judul` varchar(24) NOT NULL,
+  `tanggal` varchar(10) NOT NULL,
+  `Description` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`ID`, `judul`, `tanggal`, `Description`) VALUES
+(4, 'New Note', '07/11/2023', ''),
+(7, 'Mate', '07/11/2023', ''),
+(8, 'IPS', '07/11/2023', ''),
+(10, 'Test', '07/11/2023', ''),
+(12, 'Comp', '07/11/2023', ''),
+(13, 'New Note', '07/11/2023', '');
 
 -- --------------------------------------------------------
 
@@ -68,6 +103,26 @@ CREATE TABLE `user` (
   `Username` varchar(16) NOT NULL,
   `Password` varchar(24) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `notes`
+--
+ALTER TABLE `notes`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `notes`
+--
+ALTER TABLE `notes`
+  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
