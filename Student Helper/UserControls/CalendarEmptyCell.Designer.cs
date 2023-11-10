@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class UserControlEmpty
+    partial class CalendarEmptyCell
     {
         /// <summary> 
         /// Required designer variable.

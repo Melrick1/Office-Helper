@@ -1,19 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Student_Helper
 {
-    public partial class NotesForm : Form
+    public partial class TabNotes : UserControl
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -22,15 +14,15 @@ namespace Student_Helper
         private string id;
         private string alamat, query;
         public static bool resetBool = false, addBool = false, editBool = false;
-
-        public NotesForm()
+        public TabNotes()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
+
             InitializeComponent();
         }
 
-        private void NotesForm_Load(object sender, EventArgs e)
+        private void TabNotes_Load(object sender, EventArgs e)
         {
             currentNotes();
             timer1.Start();
@@ -45,7 +37,7 @@ namespace Student_Helper
                 currentNotes();
                 resetBool = false;
             }
-            
+
             //Check for adds
             if (addBool == true)
             {
@@ -63,10 +55,9 @@ namespace Student_Helper
             }
         }
 
-
         public void currentNotes()
         {
-            UserControlAddNote UCAddNote = new UserControlAddNote();
+            UserControlNoteAdd UCAddNote = new UserControlNoteAdd();
             NotesContainer.Controls.Add(UCAddNote);
 
             if (koneksi.State != ConnectionState.Open)
@@ -98,7 +89,7 @@ namespace Student_Helper
 
             for (int i = 0; i <= Convert.ToInt32(id) - 1; i++)
             {
-                UserControlNewNote newNotes = new UserControlNewNote();
+                UserControlNoteNew newNotes = new UserControlNoteNew();
                 newNotes.displayJudulFromIndex(i);
                 NotesContainer.Controls.Add(newNotes);
             }
@@ -110,41 +101,5 @@ namespace Student_Helper
             NotesContainer.Controls.Clear();
             currentNotes();
         }
-
-        //Main Menu Buttons
-        private void buttonSchedule_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ScheduleForm ScheduleForm = new ScheduleForm();
-            ScheduleForm.Show();
-        }
-
-        private void buttonReminder_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            NotesForm NotesForm = new NotesForm();
-            NotesForm.Show();
-        }
-
-        private void buttonToDo_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ToDoForm ToDoForm = new ToDoForm();
-            ToDoForm.Show();
-        }
-
-        private void buttonNotes_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            NotesForm NotesForm = new NotesForm();
-            NotesForm.Show();
-        }
-
-        private void buttonCalendar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CalendarForm CalendarForm = new CalendarForm();
-            CalendarForm.Show();
-        }
-    }  
+    }
 }

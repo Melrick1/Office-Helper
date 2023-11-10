@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class NotesForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dataSet1 = new System.Data.DataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCalendar = new System.Windows.Forms.Button();
             this.buttonNotes = new System.Windows.Forms.Button();
             this.buttonToDo = new System.Windows.Forms.Button();
             this.buttonReminder = new System.Windows.Forms.Button();
             this.buttonSchedule = new System.Windows.Forms.Button();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.NotesContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.RefreshBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
             // 
             // panel1
             // 
@@ -53,117 +55,110 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(141, 609);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(250, 681);
+            this.panel1.TabIndex = 15;
             // 
             // buttonCalendar
             // 
-            this.buttonCalendar.Location = new System.Drawing.Point(19, 280);
+            this.buttonCalendar.BackColor = System.Drawing.Color.Gray;
+            this.buttonCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCalendar.ForeColor = System.Drawing.Color.White;
+            this.buttonCalendar.Location = new System.Drawing.Point(0, 381);
             this.buttonCalendar.Name = "buttonCalendar";
-            this.buttonCalendar.Size = new System.Drawing.Size(101, 31);
+            this.buttonCalendar.Size = new System.Drawing.Size(250, 50);
             this.buttonCalendar.TabIndex = 3;
             this.buttonCalendar.Text = "Calendar";
-            this.buttonCalendar.UseVisualStyleBackColor = true;
+            this.buttonCalendar.UseVisualStyleBackColor = false;
             this.buttonCalendar.Click += new System.EventHandler(this.buttonCalendar_Click);
             // 
             // buttonNotes
             // 
-            this.buttonNotes.Location = new System.Drawing.Point(19, 238);
+            this.buttonNotes.BackColor = System.Drawing.Color.Gray;
+            this.buttonNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNotes.ForeColor = System.Drawing.Color.White;
+            this.buttonNotes.Location = new System.Drawing.Point(0, 330);
             this.buttonNotes.Name = "buttonNotes";
-            this.buttonNotes.Size = new System.Drawing.Size(101, 31);
+            this.buttonNotes.Size = new System.Drawing.Size(250, 50);
             this.buttonNotes.TabIndex = 2;
             this.buttonNotes.Text = "Notes";
-            this.buttonNotes.UseVisualStyleBackColor = true;
+            this.buttonNotes.UseVisualStyleBackColor = false;
             this.buttonNotes.Click += new System.EventHandler(this.buttonNotes_Click);
             // 
             // buttonToDo
             // 
-            this.buttonToDo.Location = new System.Drawing.Point(19, 196);
+            this.buttonToDo.BackColor = System.Drawing.Color.Gray;
+            this.buttonToDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonToDo.ForeColor = System.Drawing.Color.White;
+            this.buttonToDo.Location = new System.Drawing.Point(0, 279);
             this.buttonToDo.Name = "buttonToDo";
-            this.buttonToDo.Size = new System.Drawing.Size(101, 31);
+            this.buttonToDo.Size = new System.Drawing.Size(250, 50);
             this.buttonToDo.TabIndex = 2;
             this.buttonToDo.Text = "To-Do List";
-            this.buttonToDo.UseVisualStyleBackColor = true;
+            this.buttonToDo.UseVisualStyleBackColor = false;
             this.buttonToDo.Click += new System.EventHandler(this.buttonToDo_Click);
             // 
             // buttonReminder
             // 
-            this.buttonReminder.Location = new System.Drawing.Point(19, 154);
+            this.buttonReminder.BackColor = System.Drawing.Color.Gray;
+            this.buttonReminder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReminder.ForeColor = System.Drawing.Color.White;
+            this.buttonReminder.Location = new System.Drawing.Point(0, 228);
             this.buttonReminder.Name = "buttonReminder";
-            this.buttonReminder.Size = new System.Drawing.Size(101, 31);
+            this.buttonReminder.Size = new System.Drawing.Size(250, 50);
             this.buttonReminder.TabIndex = 1;
             this.buttonReminder.Text = "Reminder";
-            this.buttonReminder.UseVisualStyleBackColor = true;
+            this.buttonReminder.UseVisualStyleBackColor = false;
             this.buttonReminder.Click += new System.EventHandler(this.buttonReminder_Click);
             // 
             // buttonSchedule
             // 
-            this.buttonSchedule.Location = new System.Drawing.Point(19, 112);
+            this.buttonSchedule.BackColor = System.Drawing.Color.Gray;
+            this.buttonSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSchedule.ForeColor = System.Drawing.Color.White;
+            this.buttonSchedule.Location = new System.Drawing.Point(0, 177);
             this.buttonSchedule.Name = "buttonSchedule";
-            this.buttonSchedule.Size = new System.Drawing.Size(101, 31);
+            this.buttonSchedule.Size = new System.Drawing.Size(250, 50);
             this.buttonSchedule.TabIndex = 0;
             this.buttonSchedule.Text = "Schedule";
-            this.buttonSchedule.UseVisualStyleBackColor = true;
+            this.buttonSchedule.UseVisualStyleBackColor = false;
             this.buttonSchedule.Click += new System.EventHandler(this.buttonSchedule_Click);
             // 
-            // vScrollBar1
+            // panel2
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(796, 54);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(18, 615);
-            this.vScrollBar1.TabIndex = 8;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Location = new System.Drawing.Point(250, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1014, 681);
+            this.panel2.TabIndex = 16;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // NotesContainer
-            // 
-            this.NotesContainer.BackColor = System.Drawing.Color.Gray;
-            this.NotesContainer.Location = new System.Drawing.Point(169, 54);
-            this.NotesContainer.Name = "NotesContainer";
-            this.NotesContainer.Size = new System.Drawing.Size(624, 615);
-            this.NotesContainer.TabIndex = 9;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.Location = new System.Drawing.Point(169, 17);
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(101, 31);
-            this.RefreshBtn.TabIndex = 4;
-            this.RefreshBtn.Text = "Refresh";
-            this.RefreshBtn.UseVisualStyleBackColor = true;
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
-            // 
-            // NotesForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
-            this.Controls.Add(this.RefreshBtn);
-            this.Controls.Add(this.NotesContainer);
-            this.Controls.Add(this.vScrollBar1);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "NotesForm";
-            this.Text = "Student-Helper | Notes";
-            this.Load += new System.EventHandler(this.NotesForm_Load);
+            this.Name = "MainForm";
+            this.Text = "Student-Helper | Schedule";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Data.DataSet dataSet1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonCalendar;
         private System.Windows.Forms.Button buttonNotes;
         private System.Windows.Forms.Button buttonToDo;
         private System.Windows.Forms.Button buttonReminder;
         private System.Windows.Forms.Button buttonSchedule;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.FlowLayoutPanel NotesContainer;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button RefreshBtn;
+        private System.Windows.Forms.Panel panel2;
     }
 }
+

@@ -70,6 +70,7 @@
             this.Controls.Add(this.AddNoteTxt);
             this.Name = "AddNote";
             this.Text = "Add a New Note";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddNote_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

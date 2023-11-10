@@ -31,6 +31,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.EditNotesTxt = new System.Windows.Forms.TextBox();
             this.AddEvent = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -60,16 +61,28 @@
             this.AddEvent.UseVisualStyleBackColor = true;
             this.AddEvent.Click += new System.EventHandler(this.AddEvent_Click);
             // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Location = new System.Drawing.Point(99, 109);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(65, 25);
+            this.DeleteBtn.TabIndex = 14;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
             // EditNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(272, 145);
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.AddEvent);
             this.Controls.Add(this.EditNotesTxt);
             this.Controls.Add(this.label2);
             this.Name = "EditNote";
             this.Text = "Edit Note";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.EditNote_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -81,5 +94,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox EditNotesTxt;
         private System.Windows.Forms.Button AddEvent;
+        private System.Windows.Forms.Button DeleteBtn;
     }
 }

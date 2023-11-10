@@ -1,18 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Student_Helper
 {
-    public partial class UserControlDay : UserControl
+    public partial class CalendarDayCell : UserControl
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -21,7 +14,7 @@ namespace Student_Helper
         private string alamat, query;
 
         public static string currentDay;
-        public UserControlDay()
+        public CalendarDayCell()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -70,7 +63,7 @@ namespace Student_Helper
             }
             try
             {
-                query = string.Format("Select event from event_date where Date = '{0}'", numDay + "-" + CalendarForm.currentMonth + "-" + CalendarForm.currentYear);
+                query = string.Format("Select event from event_date where Date = '{0}'", numDay + "-" + TabCalendar.currentMonth + "-" + TabCalendar.currentYear);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 MySqlDataReader reader = perintah.ExecuteReader();

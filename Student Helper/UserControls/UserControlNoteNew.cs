@@ -1,20 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Student_Helper
 {
-    public partial class UserControlNewNote : UserControl
+    public partial class UserControlNoteNew : UserControl
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -23,7 +15,7 @@ namespace Student_Helper
         private string alamat, query;
 
         public static string Title;
-        public UserControlNewNote()
+        public UserControlNoteNew()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -39,13 +31,13 @@ namespace Student_Helper
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.BackColor = Color.DimGray;
-            NotesForm.editBool = true;
+            TabNotes.editBool = true;
         }
 
         private void NoteLbl_Click(object sender, EventArgs e)
         {
             this.BackColor = Color.DimGray;
-            NotesForm.editBool = true;
+            TabNotes.editBool = true;
         }
 
         public void displayJudulFromIndex(int index)
