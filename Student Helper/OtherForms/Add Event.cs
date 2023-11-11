@@ -24,7 +24,7 @@ namespace Student_Helper
         //Load Text
         private void Add_Event_Load(object sender, EventArgs e)
         {
-            DateTxt.Text = CalendarDayCell.currentDay + "-" + TabCalendar.currentMonth + "-" + TabCalendar.currentYear;
+            DateTxt.Text = CalendarDayCell.Date + "-" + TabCalendar.currentMonth + "-" + TabCalendar.currentYear;
         }
 
         //Delete Event
@@ -78,7 +78,6 @@ namespace Student_Helper
             {
                 MessageBox.Show(ex.ToString());
             }
-            
             this.Close();
         }
     }

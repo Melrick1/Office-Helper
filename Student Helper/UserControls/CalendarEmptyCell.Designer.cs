@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // UserControlEmpty
+            // CalendarEmptyCell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Name = "UserControlEmpty";
-            this.Size = new System.Drawing.Size(138, 96);
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Name = "CalendarEmptyCell";
+            this.Size = new System.Drawing.Size(137, 96);
             this.Load += new System.EventHandler(this.UserControlEmpty_Load);
             this.ResumeLayout(false);
 

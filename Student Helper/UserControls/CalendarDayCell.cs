@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Student_Helper
@@ -13,7 +14,9 @@ namespace Student_Helper
 
         private string alamat, query;
 
-        public static string currentDay;
+        public static string Date;
+        private int currentDateDay = DateTime.Now.Day;
+
         public CalendarDayCell()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
@@ -32,29 +35,36 @@ namespace Student_Helper
         {
             //Convert string to int
             calendarDisplayEvent(Convert.ToInt32(labelDay.Text));
+
+            
+            if (labelDay.Text == currentDateDay.ToString())
+            {
+                this.BackColor = Color.Blue;
+            }
         }
 
         //Label Day
         public void days(int numDay)
         {
-            labelDay.Text = numDay + "";
+            labelDay.Text = numDay.ToString();
         }
 
         //Control Click
         private void UserControlDay_Click(object sender, EventArgs e)
         {
-            currentDay = labelDay.Text;
+            Date = labelDay.Text;
             Add_Event addEventFrm = new Add_Event();
             addEventFrm.Show();
         }
 
         private void EventLbl_Click(object sender, EventArgs e)
         {
-            currentDay = labelDay.Text;
+            Date = labelDay.Text;
             Add_Event addEventFrm = new Add_Event();
             addEventFrm.Show();
         }
 
+        //Date Display
         public void calendarDisplayEvent(int numDay)
         {
             if (koneksi.State != ConnectionState.Open)

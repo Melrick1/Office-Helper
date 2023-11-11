@@ -52,7 +52,7 @@
             // 
             // AddEvent
             // 
-            this.AddEvent.Location = new System.Drawing.Point(176, 109);
+            this.AddEvent.Location = new System.Drawing.Point(178, 108);
             this.AddEvent.Name = "AddEvent";
             this.AddEvent.Size = new System.Drawing.Size(65, 25);
             this.AddEvent.TabIndex = 15;

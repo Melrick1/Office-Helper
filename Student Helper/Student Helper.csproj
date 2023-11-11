@@ -103,12 +103,6 @@
     <Compile Include="UserControls\UserControlNoteAdd.Designer.cs">
       <DependentUpon>UserControlNoteAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherForms\EditNote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\EditNote.Designer.cs">
-      <DependentUpon>EditNote.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlNoteNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -140,9 +134,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\AddNote.resx">
       <DependentUpon>AddNote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\EditNote.resx">
-      <DependentUpon>EditNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TabCalendar.resx">
       <DependentUpon>TabCalendar.cs</DependentUpon>

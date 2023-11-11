@@ -86,7 +86,6 @@ C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helpe
 C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.csproj.CopyComplete
 C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.exe
 C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.pdb
-C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.EditNote.resources
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.AddNote.resources
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlNoteNew.resources
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.CalendarEmptyCell.resources

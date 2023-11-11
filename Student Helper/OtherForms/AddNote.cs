@@ -22,11 +22,6 @@ namespace Student_Helper
             InitializeComponent();
         }
 
-        private void Add_Notes_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddNote_Load(object sender, EventArgs e)
         {
 
@@ -47,12 +42,11 @@ namespace Student_Helper
                 koneksi.Close();
                 if (res == 1)
                 {
-                    MessageBox.Show("Insert data berhasil");
-                    Add_Notes_Load(null, null);
+                    MessageBox.Show("New Notes added");
                 }
                 else
                 {
-                    MessageBox.Show("Insert data gagal");
+                    MessageBox.Show("Failed to add new notes");
                 }
             }
             catch (Exception ex)

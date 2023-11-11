@@ -11,21 +11,31 @@ namespace Student_Helper
             InitializeComponent();
         }
 
-        private void UserControlAddNote_Load(object sender, EventArgs e)
+        private void userControlAddNote_Load(object sender, EventArgs e)
         {
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.DimGray;
-            TabNotes.addBool = true;
+            AddNote addNote = new AddNote();
+            addNote.Show();
         }
 
         private void NoteLbl_Click(object sender, EventArgs e)
         {
+            AddNote addNote = new AddNote();
+            addNote.Show();
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
             this.BackColor = Color.DimGray;
-            TabNotes.addBool = true;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Transparent;
         }
     }
 }

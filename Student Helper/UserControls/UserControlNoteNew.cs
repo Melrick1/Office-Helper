@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Student_Helper
@@ -14,32 +15,81 @@ namespace Student_Helper
 
         private string alamat, query;
 
-        public static string Title;
+        string Title, ID;
+        public static bool boolTrash = false;
         public UserControlNoteNew()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
+
             InitializeComponent();
         }
-   
 
         private void NewNotes_Load(object sender, EventArgs e)
         {
-
+            this.BackColor = Color.Transparent;
+            TitleBox.BackColor = Color.Gray;
+            TitleBox.ReadOnly = true;
         }
 
+        //Select
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.DimGray;
-            TabNotes.editBool = true;
+            if (this.BackColor == Color.Transparent) {
+                this.BackColor = Color.DimGray;
+                TitleBox.BackColor = Color.DimGray;
+            }
+            else
+            {
+                this.BackColor = Color.Transparent;
+                TitleBox.BackColor = Color.Gray;
+            }
         }
 
-        private void NoteLbl_Click(object sender, EventArgs e)
+        //Renaming Title
+        private void TitleBox_DoubleClick(object sender, EventArgs e)
         {
-            this.BackColor = Color.DimGray;
-            TabNotes.editBool = true;
+            TitleBox.BorderStyle = BorderStyle.FixedSingle;
+            TitleBox.BackColor = Color.White;
+            TitleBox.ReadOnly = false;
         }
 
+        //Update SQL when losing focus on component
+        private void TitleBox_Leave(object sender, EventArgs e)
+        {
+            TitleBox.BorderStyle = BorderStyle.None;
+            TitleBox.BackColor = Color.Gray;
+            TitleBox.ReadOnly = true;
+            Title = TitleBox.Text;
+            this.Name = Title;
+
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("update notes set judul = '{0}' where id = '{1}' ", Title, ID);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                int res = perintah.ExecuteNonQuery();
+            }
+            finally
+            {
+                koneksi.Close();
+            }
+        }
+
+        //Update SQL when pressing Enter
+        private void TitleBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                TitleBox_Leave(null,null);
+            }
+        }
+
+        //Getting Title
         public void displayJudulFromIndex(int index)
         {
             if (koneksi.State != ConnectionState.Open)
@@ -48,14 +98,12 @@ namespace Student_Helper
             }
             try
             {
-                // Kode sebelumnya untuk mengambil judul catatan terbaru dari database
                 query = string.Format("SELECT judul FROM notes limit 1 offset {0}", index);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
 
                 MySqlDataReader reader = perintah.ExecuteReader();
                 {
-                    // Jika ada data yang dapat dibaca
                     if (reader.Read())
                     {
                         Title = reader["judul"].ToString();
@@ -65,16 +113,38 @@ namespace Student_Helper
                         Title = "New Notes";
                     }
                 }
-
-                NoteLbl.Text = Title;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                this.Name = Title;
+                TitleBox.Text = Title;
             }
             finally
             {
-                // Pastikan selalu menutup koneksi, terlepas dari apapun yang terjadi
+                koneksi.Close();
+            }
+        }
+
+        //Getting ID
+        public void IDFromIndex(int index)
+        {
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("SELECT ID FROM notes limit 1 offset {0}", index);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+
+                MySqlDataReader reader = perintah.ExecuteReader();
+                {
+                    if (reader.Read())
+                    {
+                        ID = reader["ID"].ToString();
+                    }
+                }
+            }
+            finally
+            {
                 koneksi.Close();
             }
         }

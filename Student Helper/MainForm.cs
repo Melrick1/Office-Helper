@@ -21,7 +21,7 @@ namespace Student_Helper
         //Main Menu Buttons
         private void buttonSchedule_Click(object sender, EventArgs e)
         {
-            this.Name = "Office-Helper | Schedule";
+            this.Text = "Office-Helper | Schedule";
             panel2.Controls.Clear();
             TabSchedule tabSchedule = new TabSchedule();
             panel2.Controls.Add(tabSchedule);
@@ -29,7 +29,7 @@ namespace Student_Helper
 
         private void buttonReminder_Click(object sender, EventArgs e)
         {
-            this.Name = "Office-Helper | Reminder";
+            this.Text = "Office-Helper | Reminder";
             panel2.Controls.Clear();
             TabReminder tabReminder = new TabReminder();
             panel2.Controls.Add(tabReminder);
@@ -37,7 +37,7 @@ namespace Student_Helper
 
         private void buttonToDo_Click(object sender, EventArgs e)
         {
-            this.Name = "Office-Helper | To-Do-List";
+            this.Text = "Office-Helper | To-Do-List";
             panel2.Controls.Clear();
             TabToDoList tabToDo = new TabToDoList();
             panel2.Controls.Add(tabToDo);
@@ -45,7 +45,7 @@ namespace Student_Helper
 
         private void buttonNotes_Click(object sender, EventArgs e)
         {
-            this.Name = "Office-Helper | To-Do-List";
+            this.Text = "Office-Helper | Notes";
             panel2.Controls.Clear();
             TabNotes tabNotes = new TabNotes();
             panel2.Controls.Add(tabNotes);
@@ -53,7 +53,7 @@ namespace Student_Helper
 
         private void buttonCalendar_Click(object sender, EventArgs e)
         {
-            this.Name = "Office-Helper | Calendar";
+            this.Text = "Office-Helper | Calendar";
             panel2.Controls.Clear();
             TabCalendar tabCalendar = new TabCalendar();
             panel2.Controls.Add(tabCalendar);

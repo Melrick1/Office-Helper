@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Student_Helper
@@ -13,7 +15,7 @@ namespace Student_Helper
 
         private string id;
         private string alamat, query;
-        public static bool resetBool = false, addBool = false, editBool = false;
+        public static bool resetBool = false, trashBool = false;
         public TabNotes()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
@@ -33,31 +35,53 @@ namespace Student_Helper
             //Check for resets
             if (resetBool == true)
             {
-                NotesContainer.Controls.Clear();
                 currentNotes();
                 resetBool = false;
             }
+        }
 
-            //Check for adds
-            if (addBool == true)
+        //Manual Refresh
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            currentNotes();
+        }
+
+        private void SelectCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SelectCheckBox.Checked)
             {
-                AddNote addNote = new AddNote();
-                addNote.Show();
-                addBool = false;
+                foreach (Control item in NotesContainer.Controls)
+                {
+                    item.BackColor = Color.DimGray;
+                }
             }
-
-            //Check for edits
-            if (editBool == true)
+            else
             {
-                EditNote editNote = new EditNote();
-                editNote.Show();
-                editBool = false;
+                foreach (Control item in NotesContainer.Controls)
+                {
+                    item.BackColor = Color.Transparent;
+                }
             }
         }
 
+        private void TrashBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Control item in NotesContainer.Controls)
+            {
+                if (item.BackColor == Color.DimGray)
+                {
+                    string itemName = (TypeDescriptor.GetProperties(item)["Name"].GetValue(item)).ToString().ToLower();
+                    Delete(itemName);
+                }
+            }
+            currentNotes();
+        }
+
+        //Display current available notes
         public void currentNotes()
         {
-            UserControlNoteAdd UCAddNote = new UserControlNoteAdd();
+            NotesContainer.Controls.Clear();    //Clear Container
+            UserControlNoteAdd UCAddNote = new UserControlNoteAdd();    //Insert "Add Button" into Container
             NotesContainer.Controls.Add(UCAddNote);
 
             if (koneksi.State != ConnectionState.Open)
@@ -66,14 +90,12 @@ namespace Student_Helper
             }
             try
             {
-                // Kode sebelumnya untuk mengambil judul catatan terbaru dari database
                 query = "SELECT COUNT(ID) FROM notes;";
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
 
                 using (MySqlDataReader reader = perintah.ExecuteReader())
                 {
-                    // Jika ada data yang dapat dibaca
                     if (reader.Read())
                     {
                         id = reader["Count(ID)"].ToString();
@@ -91,15 +113,27 @@ namespace Student_Helper
             {
                 UserControlNoteNew newNotes = new UserControlNoteNew();
                 newNotes.displayJudulFromIndex(i);
+                newNotes.IDFromIndex(i);
                 NotesContainer.Controls.Add(newNotes);
             }
         }
-
-        //Manual Refresh
-        private void RefreshBtn_Click(object sender, EventArgs e)
+        public void Delete(string name)
         {
-            NotesContainer.Controls.Clear();
-            currentNotes();
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("Delete from notes where judul = '{0}'", name);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                int res = perintah.ExecuteNonQuery();
+            }
+            finally
+            {
+                koneksi.Close();
+            }
         }
     }
 }
