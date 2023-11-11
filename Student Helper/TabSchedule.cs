@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Student_Helper
 {
-    public partial class ScheduleForm : Form
+    public partial class TabSchedule : UserControl
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -19,7 +13,8 @@ namespace Student_Helper
 
         private DataSet ds = new DataSet();
         private string alamat, query;
-        public ScheduleForm()
+
+        public TabSchedule()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -27,8 +22,7 @@ namespace Student_Helper
             InitializeComponent();
         }
 
-        //Load
-        private void Form1_Load(object sender, EventArgs e)
+        private void ScheduleTab_Load(object sender, EventArgs e)
         {
             try
             {
@@ -82,7 +76,7 @@ namespace Student_Helper
                 if (res == 1)
                 {
                     MessageBox.Show("Insert data berhasil");
-                    Form1_Load(null, null);
+                    ScheduleTab_Load(null, null);
                 }
                 else
                 {
@@ -94,7 +88,7 @@ namespace Student_Helper
                 MessageBox.Show(ex.ToString());
             }
         }
-        
+
         //Update
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
@@ -113,7 +107,7 @@ namespace Student_Helper
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                Form1_Load(null, null);
+                ScheduleTab_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -138,7 +132,7 @@ namespace Student_Helper
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                Form1_Load(null, null);
+                ScheduleTab_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -163,48 +157,12 @@ namespace Student_Helper
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                Form1_Load(null, null);
+                ScheduleTab_Load(null, null);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        //Main Menu Buttons
-        private void buttonSchedule_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ScheduleForm ScheduleForm = new ScheduleForm();
-            ScheduleForm.Show();
-        }
-
-        private void buttonReminder_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ReminderForm ReminderForm = new ReminderForm();
-            ReminderForm.Show();
-        }
-
-        private void buttonToDo_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ToDoForm ToDoForm = new ToDoForm();
-            ToDoForm.Show();
-        }
-
-        private void buttonNotes_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            NotesForm NotesForm = new NotesForm();
-            NotesForm.Show();
-        }
-
-        private void buttonCalendar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CalendarForm CalendarForm = new CalendarForm();
-            CalendarForm.Show();
         }
     }
 }

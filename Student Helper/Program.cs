@@ -17,7 +17,7 @@ namespace Student_Helper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ScheduleForm());
+            Application.Run(new MainForm());
         }
     }
 }

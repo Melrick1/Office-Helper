@@ -22,11 +22,6 @@ C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student He
 C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.pdb
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\bin\Debug\MySql.Web.dll
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\bin\Debug\MySql.Web.xml
-C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.CalendarForm.resources
-C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.ScheduleForm.resources
-C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlEmpty.resources
-C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlDay.resources
-C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.NotesForm.resources
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.Add_Event.resources
 C:\Users\legion\source\repos\Project Visprog\Student Helper\bin\Debug\Student Helper.exe.config
 C:\Users\legion\source\repos\Project Visprog\Student Helper\bin\Debug\Student Helper.exe
@@ -58,7 +53,6 @@ C:\Users\legion\source\repos\Project Visprog\Student Helper\obj\Debug\Student He
 C:\Users\legion\source\repos\Project Visprog\Student Helper\obj\Debug\Student Helper.csproj.CopyComplete
 C:\Users\legion\source\repos\Project Visprog\Student Helper\obj\Debug\Student Helper.exe
 C:\Users\legion\source\repos\Project Visprog\Student Helper\obj\Debug\Student Helper.pdb
-C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.ToDoForm.resources
 C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\bin\Debug\Student Helper.exe.config
 C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\bin\Debug\Student Helper.exe
 C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\bin\Debug\Student Helper.pdb
@@ -92,7 +86,14 @@ C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helpe
 C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.csproj.CopyComplete
 C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.exe
 C:\Users\ACER\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student Helper.pdb
-C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlNewNote.resources
-C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlAddNote.resources
-C:\Users\Melrick\Source\Repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.EditNote.resources
 C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.AddNote.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlNoteNew.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.CalendarEmptyCell.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.CalendarDayCell.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.UserControlNoteAdd.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.TabCalendar.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.TabSchedule.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.MainForm.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.TabReminder.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.TabToDoList.resources
+C:\Users\Melrick\source\repos\Student-Helper\Student Helper\obj\Debug\Student_Helper.TabNotes.resources

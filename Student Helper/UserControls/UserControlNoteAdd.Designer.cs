@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class UserControlAddNote
+    partial class UserControlNoteAdd
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddNote));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlNoteAdd));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NoteLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -45,6 +45,8 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // NoteLbl
             // 
@@ -59,15 +61,15 @@
             this.NoteLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.NoteLbl.Click += new System.EventHandler(this.NoteLbl_Click);
             // 
-            // UserControlAddNote
+            // UserControlNoteAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.NoteLbl);
             this.Controls.Add(this.pictureBox1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Name = "UserControlAddNote";
-            this.Load += new System.EventHandler(this.UserControlAddNote_Load);
+            this.Name = "UserControlNoteAdd";
+            this.Load += new System.EventHandler(this.userControlAddNote_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

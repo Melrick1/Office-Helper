@@ -55,100 +55,106 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add Event.cs">
+    <Compile Include="OtherForms\Add Event.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add Event.Designer.cs">
+    <Compile Include="OtherForms\Add Event.Designer.cs">
       <DependentUpon>Add Event.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNote.cs">
+    <Compile Include="OtherForms\AddNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNote.Designer.cs">
+    <Compile Include="OtherForms\AddNote.Designer.cs">
       <DependentUpon>AddNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlAddNote.cs">
+    <Compile Include="TabCalendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlAddNote.Designer.cs">
-      <DependentUpon>UserControlAddNote.cs</DependentUpon>
+    <Compile Include="TabCalendar.Designer.cs">
+      <DependentUpon>TabCalendar.cs</DependentUpon>
     </Compile>
-    <Compile Include="CalendarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CalendarForm.Designer.cs">
-      <DependentUpon>CalendarForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditNote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditNote.Designer.cs">
-      <DependentUpon>EditNote.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlNewNote.cs">
+    <Compile Include="TabNotes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlNewNote.Designer.cs">
-      <DependentUpon>UserControlNewNote.cs</DependentUpon>
+    <Compile Include="TabNotes.Designer.cs">
+      <DependentUpon>TabNotes.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotesForm.cs">
+    <Compile Include="TabReminder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabReminder.Designer.cs">
+      <DependentUpon>TabReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabSchedule.Designer.cs">
+      <DependentUpon>TabSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabToDoList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabToDoList.Designer.cs">
+      <DependentUpon>TabToDoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlNoteAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNoteAdd.Designer.cs">
+      <DependentUpon>UserControlNoteAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlNoteNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlNoteNew.Designer.cs">
+      <DependentUpon>UserControlNoteNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NotesForm.Designer.cs">
-      <DependentUpon>NotesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ToDoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ToDoForm.Designer.cs">
-      <DependentUpon>ToDoForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReminderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReminderForm.Designer.cs">
-      <DependentUpon>ReminderForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ScheduleForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ScheduleForm.Designer.cs">
-      <DependentUpon>ScheduleForm.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControlEmpty.cs">
+    <Compile Include="UserControls\CalendarEmptyCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlEmpty.Designer.cs">
-      <DependentUpon>UserControlEmpty.cs</DependentUpon>
+    <Compile Include="UserControls\CalendarEmptyCell.Designer.cs">
+      <DependentUpon>CalendarEmptyCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlDay.cs">
+    <Compile Include="UserControls\CalendarDayCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlDay.Designer.cs">
-      <DependentUpon>UserControlDay.cs</DependentUpon>
+    <Compile Include="UserControls\CalendarDayCell.Designer.cs">
+      <DependentUpon>CalendarDayCell.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Add Event.resx">
+    <EmbeddedResource Include="OtherForms\Add Event.resx">
       <DependentUpon>Add Event.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddNote.resx">
+    <EmbeddedResource Include="OtherForms\AddNote.resx">
       <DependentUpon>AddNote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CalendarForm.resx">
-      <DependentUpon>CalendarForm.cs</DependentUpon>
+    <EmbeddedResource Include="TabCalendar.resx">
+      <DependentUpon>TabCalendar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditNote.resx">
-      <DependentUpon>EditNote.cs</DependentUpon>
+    <EmbeddedResource Include="TabNotes.resx">
+      <DependentUpon>TabNotes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlNewNote.resx">
-      <DependentUpon>UserControlNewNote.cs</DependentUpon>
+    <EmbeddedResource Include="TabReminder.resx">
+      <DependentUpon>TabReminder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotesForm.resx">
-      <DependentUpon>NotesForm.cs</DependentUpon>
+    <EmbeddedResource Include="TabSchedule.resx">
+      <DependentUpon>TabSchedule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScheduleForm.resx">
-      <DependentUpon>ScheduleForm.cs</DependentUpon>
+    <EmbeddedResource Include="TabToDoList.resx">
+      <DependentUpon>TabToDoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControlNoteNew.resx">
+      <DependentUpon>UserControlNoteNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -160,17 +166,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ToDoForm.resx">
-      <DependentUpon>ToDoForm.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\CalendarEmptyCell.resx">
+      <DependentUpon>CalendarEmptyCell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlEmpty.resx">
-      <DependentUpon>UserControlEmpty.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\CalendarDayCell.resx">
+      <DependentUpon>CalendarDayCell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlDay.resx">
-      <DependentUpon>UserControlDay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlAddNote.resx">
-      <DependentUpon>UserControlAddNote.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UserControlNoteAdd.resx">
+      <DependentUpon>UserControlNoteAdd.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -185,5 +188,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

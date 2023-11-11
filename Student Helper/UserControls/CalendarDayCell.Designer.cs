@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class UserControlDay
+    partial class CalendarDayCell
     {
         /// <summary> 
         /// Required designer variable.
@@ -52,7 +52,7 @@
             this.EventLbl.ForeColor = System.Drawing.Color.DarkBlue;
             this.EventLbl.Location = new System.Drawing.Point(0, 72);
             this.EventLbl.Name = "EventLbl";
-            this.EventLbl.Size = new System.Drawing.Size(138, 24);
+            this.EventLbl.Size = new System.Drawing.Size(137, 24);
             this.EventLbl.TabIndex = 2;
             this.EventLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EventLbl.Click += new System.EventHandler(this.EventLbl_Click);
@@ -61,16 +61,17 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // UserControlDay
+            // CalendarDayCell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.EventLbl);
             this.Controls.Add(this.labelDay);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Name = "UserControlDay";
-            this.Size = new System.Drawing.Size(138, 96);
+            this.Name = "CalendarDayCell";
+            this.Size = new System.Drawing.Size(137, 96);
             this.Load += new System.EventHandler(this.UserControlDay_Load);
             this.Click += new System.EventHandler(this.UserControlDay_Click);
             this.ResumeLayout(false);

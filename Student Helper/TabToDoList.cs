@@ -1,14 +1,10 @@
 ﻿using System.Data;
 using System;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data;
 using MySql.Data.MySqlClient;
-
 namespace Student_Helper
 {
-    public partial class ToDoForm : Form
+    public partial class TabToDoList : UserControl
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -17,38 +13,14 @@ namespace Student_Helper
         private DataSet ds = new DataSet();
         private string alamat, query;
 
-        public ToDoForm()
+        public TabToDoList()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
 
             InitializeComponent();
         }
-
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        DataTable ToDoList = new DataTable();
-
-        private void ToDoForm_Load(object sender, EventArgs e)
+        private void TabToDoList_Load(object sender, EventArgs e)
         {
             try
             {
@@ -74,9 +46,33 @@ namespace Student_Helper
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void NewButton_Click(object sender, EventArgs e)
         {
-
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("insert into List (Title, Description, DueDate) values ('{0}', '{1}', '{2}')", TitleBox.Text, DescBox.Text, DueBox.Text);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+                int res = perintah.ExecuteNonQuery();
+                koneksi.Close();
+                if (res == 1)
+                {
+                    MessageBox.Show("New list successfully created");
+                    TabToDoList_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to create new list");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -96,36 +92,7 @@ namespace Student_Helper
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                ToDoForm_Load(null, null);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void NewButton_Click(object sender, EventArgs e)
-        {
-            if (koneksi.State != ConnectionState.Open)
-            {
-                koneksi.Open();
-            }
-            try
-            {
-                query = string.Format("insert into List (Title, Description, DueDate) values ('{0}', '{1}', '{2}')", TitleBox.Text, DescBox.Text, DueBox.Text);
-                perintah = new MySqlCommand(query, koneksi);
-                adapter = new MySqlDataAdapter(perintah);
-                int res = perintah.ExecuteNonQuery();
-                koneksi.Close();
-                if (res == 1)
-                {
-                    MessageBox.Show("Insert data berhasil");
-                    ToDoForm_Load(null, null);
-                }
-                else
-                {
-                    MessageBox.Show("Insert data gagal");
-                }
+                TabToDoList_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -149,47 +116,12 @@ namespace Student_Helper
                 adapter.Fill(ds);
                 koneksi.Close();
 
-                ToDoForm_Load(null, null);
+                TabToDoList_Load(null, null);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void buttonSchedule_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ScheduleForm ScheduleForm = new ScheduleForm();
-            ScheduleForm.Show();
-        }
-
-        private void buttonReminder_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ReminderForm ReminderForm = new ReminderForm();
-            ReminderForm.Show();
-        }
-
-        private void buttonToDo_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            ToDoForm ToDoForm = new ToDoForm();
-            ToDoForm.Show();
-        }
-
-        private void buttonNotes_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            NotesForm NotesForm = new NotesForm();
-            NotesForm.Show();
-        }
-
-        private void buttonCalendar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            CalendarForm CalendarForm = new CalendarForm();
-            CalendarForm.Show();
         }
     }
 }

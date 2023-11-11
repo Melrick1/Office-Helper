@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class UserControlNewNote
+    partial class UserControlNoteNew
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlNewNote));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlNoteNew));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.NoteLbl = new System.Windows.Forms.Label();
+            this.TitleBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,47 +38,49 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(7, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 118);
+            this.pictureBox1.Size = new System.Drawing.Size(136, 121);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // NoteLbl
+            // TitleBox
             // 
-            this.NoteLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NoteLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.NoteLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteLbl.Location = new System.Drawing.Point(0, 122);
-            this.NoteLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.NoteLbl.Name = "NoteLbl";
-            this.NoteLbl.Size = new System.Drawing.Size(150, 28);
-            this.NoteLbl.TabIndex = 1;
-            this.NoteLbl.Text = "New Note";
-            this.NoteLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.NoteLbl.Click += new System.EventHandler(this.NoteLbl_Click);
+            this.TitleBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TitleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleBox.Location = new System.Drawing.Point(3, 128);
+            this.TitleBox.Name = "TitleBox";
+            this.TitleBox.ReadOnly = true;
+            this.TitleBox.Size = new System.Drawing.Size(144, 19);
+            this.TitleBox.TabIndex = 2;
+            this.TitleBox.Text = "New Note";
+            this.TitleBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TitleBox.DoubleClick += new System.EventHandler(this.TitleBox_DoubleClick);
+            this.TitleBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TitleBox_KeyDown);
+            this.TitleBox.Leave += new System.EventHandler(this.TitleBox_Leave);
             // 
-            // UserControlNewNote
+            // UserControlNoteNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.NoteLbl);
+            this.Controls.Add(this.TitleBox);
             this.Controls.Add(this.pictureBox1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "UserControlNewNote";
+            this.Name = "UserControlNoteNew";
             this.Load += new System.EventHandler(this.NewNotes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label NoteLbl;
+        private System.Windows.Forms.TextBox TitleBox;
     }
 }

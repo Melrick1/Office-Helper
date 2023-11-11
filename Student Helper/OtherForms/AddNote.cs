@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Student_Helper
@@ -26,11 +20,6 @@ namespace Student_Helper
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
             InitializeComponent();
-        }
-
-        private void Add_Notes_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void AddNote_Load(object sender, EventArgs e)
@@ -53,19 +42,18 @@ namespace Student_Helper
                 koneksi.Close();
                 if (res == 1)
                 {
-                    MessageBox.Show("Insert data berhasil");
-                    Add_Notes_Load(null, null);
+                    MessageBox.Show("New Notes added");
                 }
                 else
                 {
-                    MessageBox.Show("Insert data gagal");
+                    MessageBox.Show("Failed to add new notes");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            NotesForm.resetBool = true;
+            TabNotes.resetBool = true;
             this.Close();
         }
     }
