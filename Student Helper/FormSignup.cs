@@ -6,14 +6,14 @@ using System.Windows.Forms;
 
 namespace Student_Helper
 {
-    public partial class Signup : Form
+    public partial class FormSignup : Form
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
         private MySqlCommand perintah;
 
         private string alamat, query;
-        public Signup()
+        public FormSignup()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -27,7 +27,7 @@ namespace Student_Helper
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            FormLogin login = new FormLogin();
             login.Show();
             this.Hide();
         }

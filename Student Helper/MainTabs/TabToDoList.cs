@@ -39,6 +39,8 @@ namespace Student_Helper
                 ToDoListView.Columns[0].HeaderText = "Title";
                 ToDoListView.Columns[1].Width = 100;
                 ToDoListView.Columns[1].HeaderText = "Description";
+                ToDoListView.Columns[2].Width = 100;
+                ToDoListView.Columns[2].HeaderText = "Due-Date";
             }
             catch (Exception ex)
             {

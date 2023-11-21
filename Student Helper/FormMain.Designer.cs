@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class Main
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.

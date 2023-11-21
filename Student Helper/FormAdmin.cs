@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Student_Helper
 {
-    public partial class Admin : Form
+    public partial class FormAdmin : Form
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -14,7 +14,7 @@ namespace Student_Helper
 
         private DataSet ds = new DataSet();
         private string alamat, query;
-        public Admin()
+        public FormAdmin()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -194,6 +194,13 @@ namespace Student_Helper
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.Show();
+            this.Hide();
         }
 
         public void UpdateSql()

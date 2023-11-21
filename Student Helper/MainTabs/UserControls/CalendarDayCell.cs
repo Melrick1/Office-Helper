@@ -15,7 +15,9 @@ namespace Student_Helper
         private string alamat, query;
 
         public static string Date;
-        private int currentDateDay = DateTime.Now.Day;
+        private int thisDay = DateTime.Now.Day;
+        private int thisMonth = DateTime.Now.Month;
+        private int thisYear = DateTime.Now.Year;
 
         public CalendarDayCell()
         {
@@ -27,20 +29,25 @@ namespace Student_Helper
 
         private void UserControlDay_Load(object sender, EventArgs e)
         {
+            //Convert string to int
+            calendarDisplayEvent(Convert.ToInt32(labelDay.Text));
+
+            //Show Today
+            if (labelDay.Text == thisDay.ToString() && 
+                TabCalendar.currentMonth == thisMonth && 
+                TabCalendar.currentYear == thisYear)
+            {
+                this.BackColor = Color.Gold;
+            }
+
             //Timer to check for updates
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //Convert string to int
+            //Timer for updates
             calendarDisplayEvent(Convert.ToInt32(labelDay.Text));
-
-            
-            if (labelDay.Text == currentDateDay.ToString())
-            {
-                this.BackColor = Color.Blue;
-            }
         }
 
         //Label Day

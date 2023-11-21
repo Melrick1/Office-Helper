@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class Signup
+    partial class FormSignup
     {
         /// <summary>
         /// Required designer variable.

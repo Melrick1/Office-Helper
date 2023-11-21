@@ -148,6 +148,38 @@ namespace Student_Helper
                 koneksi.Close();
             }
         }
+
+        public void selectfromJudul(string title)
+        {
+            if (koneksi.State != ConnectionState.Open)
+            {
+                koneksi.Open();
+            }
+            try
+            {
+                query = string.Format("SELECT judul FROM notes where judul='{0}'", title);
+                perintah = new MySqlCommand(query, koneksi);
+                adapter = new MySqlDataAdapter(perintah);
+
+                MySqlDataReader reader = perintah.ExecuteReader();
+                {
+                    if (reader.Read())
+                    {
+                        Title = reader["judul"].ToString();
+                    }
+                    else
+                    {
+                        Title = "New Notes";
+                    }
+                }
+                this.Name = Title;
+                TitleBox.Text = Title;
+            }
+            finally
+            {
+                koneksi.Close();
+            }
+        }
     }
 }
 

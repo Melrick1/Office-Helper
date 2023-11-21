@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Student_Helper
 {
-    public partial class Main : Form
+    public partial class FormMain : Form
     {
-        public Main()
+        public FormMain()
         {
             InitializeComponent();
         }
@@ -61,7 +61,7 @@ namespace Student_Helper
 
         private void OutBtn_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
+            FormLogin login = new FormLogin();
             login.Show();
             this.Close();
         }

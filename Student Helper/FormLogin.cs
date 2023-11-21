@@ -7,7 +7,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Student_Helper
 {
-    public partial class Login : Form
+    public partial class FormLogin : Form
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -15,7 +15,7 @@ namespace Student_Helper
 
         private DataSet ds = new DataSet();
         private string alamat, query;
-        public Login()
+        public FormLogin()
         {
             alamat = "server=localhost; database=helperdb; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -51,7 +51,7 @@ namespace Student_Helper
             }
             if (UserBox.Text == "admin" && PassBox.Text == "admin")
             {
-                Admin admin = new Admin();
+                FormAdmin admin = new FormAdmin();
                 admin.Show();
                 this.Hide();
                 return;
@@ -71,14 +71,14 @@ namespace Student_Helper
 
         private void SignUpBtn_Click(object sender, EventArgs e)
         {
-            Signup signUp = new Signup();
+            FormSignup signUp = new FormSignup();
             signUp.Show();
             this.Hide();
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
         private void Exit_MouseHover(object sender, EventArgs e)
@@ -110,13 +110,13 @@ namespace Student_Helper
                     foreach (DataRow column in ds.Tables[0].Rows)
                     {
                         string pass;
-                        pass = column["password"].ToString();
+                        pass = column["Password"].ToString();
                         if (pass != PassBox.Text)
                         {
                             MessageBox.Show("Anda salah input password");
                             return;
                         }
-                        Main mainMenu = new Main();
+                        FormMain mainMenu = new FormMain();
                         mainMenu.Show();
                         this.Hide();
                     }

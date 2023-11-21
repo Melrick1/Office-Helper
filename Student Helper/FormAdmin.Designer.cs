@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class Admin
+    partial class FormAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -199,6 +199,7 @@
             this.ExitBtn.TabIndex = 42;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = false;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // Admin
             // 
