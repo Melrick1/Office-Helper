@@ -1,6 +1,6 @@
 ﻿namespace Student_Helper
 {
-    partial class MainForm
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@
         {
             this.dataSet1 = new System.Data.DataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.OutBtn = new System.Windows.Forms.Button();
             this.buttonCalendar = new System.Windows.Forms.Button();
             this.buttonNotes = new System.Windows.Forms.Button();
             this.buttonToDo = new System.Windows.Forms.Button();
@@ -46,7 +47,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.panel1.BackColor = System.Drawing.Color.Indigo;
+            this.panel1.Controls.Add(this.OutBtn);
             this.panel1.Controls.Add(this.buttonCalendar);
             this.panel1.Controls.Add(this.buttonNotes);
             this.panel1.Controls.Add(this.buttonToDo);
@@ -58,9 +60,22 @@
             this.panel1.Size = new System.Drawing.Size(250, 681);
             this.panel1.TabIndex = 15;
             // 
+            // OutBtn
+            // 
+            this.OutBtn.BackColor = System.Drawing.Color.DarkMagenta;
+            this.OutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutBtn.ForeColor = System.Drawing.Color.White;
+            this.OutBtn.Location = new System.Drawing.Point(0, 568);
+            this.OutBtn.Name = "OutBtn";
+            this.OutBtn.Size = new System.Drawing.Size(250, 50);
+            this.OutBtn.TabIndex = 4;
+            this.OutBtn.Text = "Log-out";
+            this.OutBtn.UseVisualStyleBackColor = false;
+            this.OutBtn.Click += new System.EventHandler(this.OutBtn_Click);
+            // 
             // buttonCalendar
             // 
-            this.buttonCalendar.BackColor = System.Drawing.Color.Gray;
+            this.buttonCalendar.BackColor = System.Drawing.Color.DarkMagenta;
             this.buttonCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCalendar.ForeColor = System.Drawing.Color.White;
             this.buttonCalendar.Location = new System.Drawing.Point(0, 381);
@@ -73,7 +88,7 @@
             // 
             // buttonNotes
             // 
-            this.buttonNotes.BackColor = System.Drawing.Color.Gray;
+            this.buttonNotes.BackColor = System.Drawing.Color.DarkMagenta;
             this.buttonNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNotes.ForeColor = System.Drawing.Color.White;
             this.buttonNotes.Location = new System.Drawing.Point(0, 330);
@@ -86,7 +101,7 @@
             // 
             // buttonToDo
             // 
-            this.buttonToDo.BackColor = System.Drawing.Color.Gray;
+            this.buttonToDo.BackColor = System.Drawing.Color.DarkMagenta;
             this.buttonToDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonToDo.ForeColor = System.Drawing.Color.White;
             this.buttonToDo.Location = new System.Drawing.Point(0, 279);
@@ -99,7 +114,7 @@
             // 
             // buttonReminder
             // 
-            this.buttonReminder.BackColor = System.Drawing.Color.Gray;
+            this.buttonReminder.BackColor = System.Drawing.Color.DarkMagenta;
             this.buttonReminder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReminder.ForeColor = System.Drawing.Color.White;
             this.buttonReminder.Location = new System.Drawing.Point(0, 228);
@@ -112,7 +127,7 @@
             // 
             // buttonSchedule
             // 
-            this.buttonSchedule.BackColor = System.Drawing.Color.Gray;
+            this.buttonSchedule.BackColor = System.Drawing.Color.DarkMagenta;
             this.buttonSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSchedule.ForeColor = System.Drawing.Color.White;
             this.buttonSchedule.Location = new System.Drawing.Point(0, 177);
@@ -159,6 +174,7 @@
         private System.Windows.Forms.Button buttonReminder;
         private System.Windows.Forms.Button buttonSchedule;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button OutBtn;
     }
 }
 

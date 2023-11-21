@@ -33,7 +33,7 @@ namespace Student_Helper
         }
 
         //Select
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void pictureBox1_Click(object sender, EventArgs e)
         {
             if (this.BackColor == Color.Transparent) {
                 this.BackColor = Color.DimGray;

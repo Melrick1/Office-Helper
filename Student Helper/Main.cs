@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Student_Helper
 {
-    public partial class MainForm : Form
+    public partial class Main : Form
     {
-        public MainForm()
+        public Main()
         {
             InitializeComponent();
         }
@@ -57,6 +57,13 @@ namespace Student_Helper
             panel2.Controls.Clear();
             TabCalendar tabCalendar = new TabCalendar();
             panel2.Controls.Add(tabCalendar);
+        }
+
+        private void OutBtn_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

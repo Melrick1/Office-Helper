@@ -40,6 +40,23 @@ namespace Student_Helper
             }
         }
 
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+            foreach (Control item in NotesContainer.Controls)
+            {
+                item.Show();
+                string search = SearchBox.Text.ToLower();
+                string itemName = Convert.ToString(TypeDescriptor.GetProperties(item)["Name"].GetValue(item)).ToLower();
+
+                bool found = itemName.Contains(search);
+
+                if (found == false)
+                {
+                    item.Hide();
+                }
+            }
+        }
+
         //Manual Refresh
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
@@ -48,20 +65,19 @@ namespace Student_Helper
 
         private void SelectCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (SelectCheckBox.Checked)
+            if (SelectCheckBox.Checked != false)
             {
                 foreach (Control item in NotesContainer.Controls)
                 {
                     item.BackColor = Color.DimGray;
                 }
+                return;
             }
-            else
+
+            foreach (Control item in NotesContainer.Controls)
             {
-                foreach (Control item in NotesContainer.Controls)
-                {
                     item.BackColor = Color.Transparent;
-                }
-            }
+            } 
         }
 
         private void TrashBtn_Click(object sender, EventArgs e)
@@ -70,7 +86,7 @@ namespace Student_Helper
             {
                 if (item.BackColor == Color.DimGray)
                 {
-                    string itemName = (TypeDescriptor.GetProperties(item)["Name"].GetValue(item)).ToString().ToLower();
+                    string itemName = (TypeDescriptor.GetProperties(item)["Name"].GetValue(item)).ToString();
                     Delete(itemName);
                 }
             }
@@ -81,7 +97,7 @@ namespace Student_Helper
         public void currentNotes()
         {
             NotesContainer.Controls.Clear();    //Clear Container
-            UserControlNoteAdd UCAddNote = new UserControlNoteAdd();    //Insert "Add Button" into Container
+            UserControlNoteAdd UCAddNote = new UserControlNoteAdd();    //Insert the "Add Button" into Container
             NotesContainer.Controls.Add(UCAddNote);
 
             if (koneksi.State != ConnectionState.Open)
@@ -104,9 +120,9 @@ namespace Student_Helper
                     perintah.Dispose();
                 }
             }
-            catch (Exception ex)
+            finally
             {
-                MessageBox.Show(ex.ToString());
+                koneksi.Close();
             }
 
             for (int i = 0; i <= Convert.ToInt32(id) - 1; i++)
@@ -117,6 +133,7 @@ namespace Student_Helper
                 NotesContainer.Controls.Add(newNotes);
             }
         }
+
         public void Delete(string name)
         {
             if (koneksi.State != ConnectionState.Open)
