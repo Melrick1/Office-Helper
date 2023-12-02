@@ -203,10 +203,12 @@ namespace Student_Helper
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Crystal_Click(object sender, EventArgs e)
         {
-            CrystalReport crystalReport = new CrystalReport();
-            crystalReport.Show();
+            Report report = new Report();
+            report.Show();
+            this.Hide();
+            return;
         }
 
         public void UpdateSql()
