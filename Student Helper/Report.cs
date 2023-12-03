@@ -13,6 +13,7 @@ namespace Student_Helper
 {
     public partial class Report : Form
     {
+
         public Report()
         {
             InitializeComponent();

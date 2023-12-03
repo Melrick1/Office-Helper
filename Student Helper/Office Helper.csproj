@@ -85,12 +85,6 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="helper.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="helper.Designer.cs">
-      <DependentUpon>helper.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainTabs\SmallForms\Add Event.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,9 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="helper.resx">
-      <DependentUpon>helper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainTabs\SmallForms\Add Event.resx">
       <DependentUpon>Add Event.cs</DependentUpon>

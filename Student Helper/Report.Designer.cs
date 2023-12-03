@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.Back = new System.Windows.Forms.Button();
+            this.pnl_child = new System.Windows.Forms.Panel();
             this.cachedCrystalReport11 = new Student_Helper.CachedCrystalReport1();
             this.crystalReport12 = new Student_Helper.CrystalReport1();
-            this.pnl_child = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(687, 44);
+            this.Back.Location = new System.Drawing.Point(693, 25);
+            this.Back.Margin = new System.Windows.Forms.Padding(2);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(75, 23);
+            this.Back.Size = new System.Drawing.Size(56, 19);
             this.Back.TabIndex = 0;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
@@ -46,18 +47,20 @@
             // 
             // pnl_child
             // 
-            this.pnl_child.Location = new System.Drawing.Point(12, 86);
+            this.pnl_child.Location = new System.Drawing.Point(11, 48);
+            this.pnl_child.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_child.Name = "pnl_child";
-            this.pnl_child.Size = new System.Drawing.Size(776, 361);
+            this.pnl_child.Size = new System.Drawing.Size(1297, 580);
             this.pnl_child.TabIndex = 1;
             // 
             // Report
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1319, 639);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.pnl_child);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Report";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.Report_Load);
