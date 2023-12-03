@@ -168,7 +168,7 @@
             this.Exit.MouseLeave += new System.EventHandler(this.Exit_MouseLeave);
             this.Exit.MouseHover += new System.EventHandler(this.Exit_MouseHover);
             // 
-            // Login
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,7 +184,8 @@
             this.Controls.Add(this.PassBox);
             this.Controls.Add(this.UserBox);
             this.Controls.Add(this.LoginBtn);
-            this.Name = "Login";
+            this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();

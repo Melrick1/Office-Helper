@@ -199,7 +199,7 @@
             this.ErrorMsg.TabIndex = 38;
             this.ErrorMsg.Text = "Error :";
             // 
-            // Signup
+            // FormSignup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,7 +218,8 @@
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.UserBox);
             this.Controls.Add(this.CancelBtn);
-            this.Name = "Signup";
+            this.Name = "FormSignup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Signup_Load);
             this.ResumeLayout(false);

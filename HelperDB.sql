@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2023 at 05:41 PM
+-- Generation Time: Dec 03, 2023 at 06:24 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -32,6 +32,13 @@ CREATE TABLE `event_date` (
   `Event` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
+--
+-- Dumping data for table `event_date`
+--
+
+INSERT INTO `event_date` (`Date`, `Event`) VALUES
+('22-11-2023', 'Test');
+
 -- --------------------------------------------------------
 
 --
@@ -41,7 +48,7 @@ CREATE TABLE `event_date` (
 CREATE TABLE `list` (
   `Title` varchar(24) NOT NULL,
   `Description` varchar(50) NOT NULL,
-  `DueDate` varchar(10) NOT NULL
+  `DueDate` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -49,7 +56,7 @@ CREATE TABLE `list` (
 --
 
 INSERT INTO `list` (`Title`, `Description`, `DueDate`) VALUES
-('Testing', 'gotta test stuff and add things', '15-11-2023');
+('test', 'blanja natal', '30-11-2023');
 
 -- --------------------------------------------------------
 
@@ -69,12 +76,11 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`ID`, `judul`, `tanggal`, `Description`) VALUES
-(4, 'New Note', '07/11/2023', ''),
-(7, 'Mate', '07/11/2023', ''),
-(8, 'IPS', '07/11/2023', ''),
-(10, 'Test', '07/11/2023', ''),
-(12, 'Comp', '07/11/2023', ''),
-(13, 'New Note', '07/11/2023', '');
+(72, '', '22/11/2023', ''),
+(73, 'Gila', '22/11/2023', ''),
+(74, 'tes', '03/12/2023', ''),
+(75, 'tes2', '03/12/2023', ''),
+(76, '', '03/12/2023', '');
 
 -- --------------------------------------------------------
 
@@ -92,6 +98,13 @@ CREATE TABLE `schedule_table` (
   `Sunday` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `schedule_table`
+--
+
+INSERT INTO `schedule_table` (`Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`, `Sunday`) VALUES
+('Hai', '', '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -99,10 +112,19 @@ CREATE TABLE `schedule_table` (
 --
 
 CREATE TABLE `user` (
-  `User_ID` int(3) DEFAULT NULL,
   `Username` varchar(16) NOT NULL,
+  `Email` varchar(64) NOT NULL,
   `Password` varchar(24) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`Username`, `Email`, `Password`) VALUES
+('Test', 'Test@gmail.com', 'Anto'),
+('Mel', 'mel1@gmail.com', 'melmel'),
+('anto', 'anto@gmail.com', 'hey');
 
 --
 -- Indexes for dumped tables
@@ -122,7 +144,7 @@ ALTER TABLE `notes`
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

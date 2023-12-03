@@ -175,7 +175,7 @@ namespace Student_Helper
             }
             try
             {
-                query = string.Format("insert into user (Username, Email, Password) values ('{0}', '{1}'. '{2}')", UserBox.Text, EmailBox.Text, UserBox.Text);
+                query = string.Format("insert into user (Username, Email, Password) values ('{0}', '{1}', '{2}')", UserBox.Text, EmailBox.Text, UserBox.Text);
                 perintah = new MySqlCommand(query, koneksi);
                 adapter = new MySqlDataAdapter(perintah);
                 int res = perintah.ExecuteNonQuery();
